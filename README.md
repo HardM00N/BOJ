@@ -1,2 +1,3 @@
-# BOJ
-Backjoon Online Judge
+## BOJ (Backjoon Online Judge)
+- Solving Problems
+- Studying Algorithms
