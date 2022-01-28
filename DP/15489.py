@@ -10,10 +10,10 @@ for i in range(2, r + w - 1):
     row.append(1)
     pas.append(row)
     
-idx = 1
+idx = 1 # 덧셈을 수행할 열의 너비 초기값
 
 for i in range(r - 1, r + w - 1):
     for j in range(idx):
         sum += pas[i][c - 1 + j]
-    idx += 1
+    idx += 1    # 다음 행은 열 너비가 1 더 크므로
 print(sum)
