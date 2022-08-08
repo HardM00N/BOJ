@@ -15,6 +15,7 @@
 배열의 크기 N, 숫자가 더해지는 횟수 M, 그리고 K가 주어질 때 동빈이의 큰 수의 법칙에 다른 결과를 출력하라.
 '''
 
+# 단순하게 푸는 답안 예시
 n, m, k = map(int, input().split())
 data = list(map(int, input().split()))
 
@@ -38,9 +39,26 @@ while True:
 
 print(result)
 
+# 답안 예시
+n, m, k = map(int, input().split())
+data = list(map(int, input().split()))
+
+data.sort()
+first = data[n-1]
+second = data[n-2]
+
+# 가장 큰 수가 더해지는 횟수 계산
+count = int(m / (k + 1)) * k
+count += m % (k + 1)
+
+result = 0
+result += (count) * first   # 가장 큰 수 더하기
+result += (m - count) * second  # 두 번째로 큰 수 더하기
+
 '''
 회고 / TIL
 - 책을 통해 그리디의 개념을 이해하기 위해 문제를 거의 그대로 필사했음. 
 - 입력받은 데이터를 정렬한 뒤, 가장 큰 수와 두 번째로 큰 수를 최대한 활용하는 것이 핵심임. 
 - 문제만 이해하면 어렵지 않게 풀 수 있는 문제임. 
+- 시간 초과를 고려해서 수열로 접근해서 문제를 풀 수 있다는 걸 떠올리기 쉽지 않은데, 동빈님 대단한 것 같다.
 '''
