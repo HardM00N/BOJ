@@ -55,6 +55,8 @@ result = 0
 result += (count) * first   # 가장 큰 수 더하기
 result += (m - count) * second  # 두 번째로 큰 수 더하기
 
+print(result)   # 최종 답안 출력
+
 '''
 회고 / TIL
 - 책을 통해 그리디의 개념을 이해하기 위해 문제를 거의 그대로 필사했음. 
