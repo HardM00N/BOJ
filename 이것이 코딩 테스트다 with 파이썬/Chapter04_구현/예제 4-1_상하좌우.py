@@ -21,9 +21,59 @@
 계획서가 주어졌을 때 여행가 A가 최종적으로 도착할 지점의 좌표를 출력하는 프로그램을 작성하시오.
 '''
 
+# 내 풀이
 
+n = int(input())
+plan = input().split()
+x, y = 1, 1
+
+for move in plan:
+    temp_x, temp_y = x, y   # 현재의 좌표를 임시 저장
+
+    if move == 'L':
+        y -= 1
+    elif move == 'R': 
+        y += 1
+    elif move  == 'U':
+        x -= 1
+    else: 
+        x += 1
+    
+    if x <= 0 or y <= 0 or x > n or y > n:    # 해당 이동이 지도를 벗어날 때
+        x, y = temp_x, temp_y   # 이동 취소
+
+print(x, y)
+
+# 4-1.py 답안 예시
+
+n = int(input())
+x, y = 1, 1
+plans = input().split()
+
+# L, R, U, D에 따른 이동 방향
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+move_types= ['L', 'R', 'U', 'D']
+
+# 이동 계획을 하나씩 확인
+for plan in plans:
+	# 이동 후 좌표 구하기
+	for i in range(len(move_types)):
+		if plan == move_types[i]:
+			nx = x + dx[i]
+			ny = y + dy[i]
+	# 공간을 벗어나는 경우 무시
+	if nx < 1 or ny < 1 or nx > n or ny > n:
+		continue
+	# 이동 수행
+	x, y = nx, ny
+
+print(x, y)
 
 '''
 회고 / TIL
-
+- 시뮬레이션 유형의 문제를 풀어보았음. 
+- 쉬운 축에 속하는 문제라서 큰 고민 없이 해결할 수 있었음. 
+- 풀고 나서 동빈님의 예시 답안을 봤는데, L, R, U, D 각각의 인덱스에 해당하는 dx, dy를 활용한 점이 재밌었음. 
+- 그래도 내 풀이가 더 간단하지 않나 하는 생각이 듦...
 '''
