@@ -60,8 +60,8 @@ if pos_row - 2 >= 0:
 print(cnt)
 
 # 4-3.py 답안 예시
-# 현재 나이트의 위치 입력받기
 
+# 현재 나이트의 위치 입력받기
 input_data = input()
 row = int(input_data[1])
 column = int(int(ord(input_data[0]))) - int(ord('a')) + 1
