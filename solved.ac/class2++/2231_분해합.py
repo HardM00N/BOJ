@@ -11,3 +11,25 @@
 자연수 N이 주어졌을 때, N의 가장 작은 생성자를 구해내는 프로그램을 작성하시오. 
 '''
 
+n = int(input())
+num_len = len(str(n)) - 1
+
+for i in range(n):
+    sum = i
+    tmp = i
+    for j in range(num_len, 0, -1):
+        sum += tmp // (10 ** j)
+        tmp = i - i // (10 ** j) * (10 ** j)
+        if j == 1:
+            sum += i % (10 ** j)
+    if sum == n:
+        ans = i
+        break
+print(ans)
+
+'''
+회고 / TIL
+- 문제를 이해하는데 너무 오래 걸렸다. 
+- 이해하고 구현하는데 코드가 많이 지저분해졌다. 
+- 조금 더 간결하게 쓸 수 있도록 노력해야겠다. 
+'''
