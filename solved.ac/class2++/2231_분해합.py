@@ -12,16 +12,17 @@
 '''
 
 n = int(input())
-num_len = len(str(n)) - 1
+num_len = len(str(n))
+ans = 0
 
-for i in range(n):
+for i in range(1, n + 1):
     sum = i
     tmp = i
     for j in range(num_len, 0, -1):
-        sum += tmp // (10 ** j)
-        tmp = i - i // (10 ** j) * (10 ** j)
+        sum += tmp // (10 ** (j - 1))
+        tmp = i - i // (10 ** (j - 1)) * (10 ** (j - 1))
         if j == 1:
-            sum += i % (10 ** j)
+            sum += tmp
     if sum == n:
         ans = i
         break
@@ -31,5 +32,6 @@ print(ans)
 회고 / TIL
 - 문제를 이해하는데 너무 오래 걸렸다. 
 - 이해하고 구현하는데 코드가 많이 지저분해졌다. 
-- 조금 더 간결하게 쓸 수 있도록 노력해야겠다. 
+- 조금 더 간결하게 쓸 수 있도록 노력해야겠다.
+- 맞춘 줄 알았는데 마지막에 한 자리 수 처리를 빼먹어서 수정함. 
 '''
