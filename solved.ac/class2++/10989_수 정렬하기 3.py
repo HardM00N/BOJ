@@ -30,5 +30,5 @@ for i in range(10001):
 - 무턱대고 쉬운 문제네 하고 sort()로 풀었다가 메모리 초과로 틀렸다. 
 - 계수 정렬을 이용해 10000까지의 수의 각 개수를 기록해 출력한다.
 - sys.stdin.readline()은 실행 시간을 줄여준다고 하니 익혀보자. 
-- sys.stdin.readline()은 prompt message를 출력하지 않고, 개행 문자를 삭제하지 않아 빠르다고 함. 
+- sys.stdin.readline()은 prompt message를 출력하지 않고, 개행 문자를 삭제하지 않아서 빠르다고 함. 
 '''
