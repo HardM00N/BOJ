@@ -13,7 +13,27 @@
 손님이 왔을 때 요청한 총 길이가 M일 때 적어도 M만큼의 떡을 얻기 위해 
 절단기에 설정할 수 있는 높이의 최댓값을 구하는 프로그램을 작성하시오.
 '''
-
+# 내 풀이
 N, M = map(int, input().split())
 heights = list(map(int, input().split()))
+max_height = max(heights)
 
+for i in range(max_height, 0, -1):
+    sum = 0
+    
+    for height in heights:
+        if height - i < 0:
+            continue
+        else:
+            sum += height - i
+    
+    if sum >= M:
+        print(i)
+        break
+
+'''
+회고 / TIL
+- 그냥 단순히 가장 큰 떡의 길이부터 1씩 감소하면서 잘라나가서 자른 나머지의 총합이 M이 되는 지점을 찾게끔 풀었음. 
+- 절단기의 높이는 1부터 10억까지의 정수 중 하나이므로, 당연하게 이진 탐색을 사용해야 한다고 한다. 크흠... (귀찮)
+- 막상 이진 탐색 코드를 보니 간결해서 손에 익으면 쓸만할 것 같다. 
+'''
