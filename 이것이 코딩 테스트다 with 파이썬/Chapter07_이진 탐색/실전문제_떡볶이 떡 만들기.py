@@ -14,7 +14,7 @@
 절단기에 설정할 수 있는 높이의 최댓값을 구하는 프로그램을 작성하시오.
 '''
 # 내 풀이
-_, _ = map(int, input().split())
+_, M = map(int, input().split())
 heights = list(map(int, input().split()))
 max_height = max(heights)
 
