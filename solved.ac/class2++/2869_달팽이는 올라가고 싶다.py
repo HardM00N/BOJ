@@ -16,3 +16,17 @@ while 1:
     day += 1
 
 print(day)
+
+# 두 번째 풀이
+import math
+
+A, B, V = map(int, input().split())
+day = (V - B) / (A - B)
+print(math.ceil(day))
+
+'''
+회고 / TIL
+- 쉬운 문제네 하고 덜컥 제출했다가 시간 초과의 벽에 걸렸다. 
+- 어떻게든 짜내봐야지 고민하다가 결국 구글의 힘을 빌렸다. 
+- 반복하면서 계산하기보다 규칙으로 한 번에 계산해서 올림하는 게 포인트다. 
+'''
