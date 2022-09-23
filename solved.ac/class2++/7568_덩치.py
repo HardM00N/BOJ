@@ -5,10 +5,9 @@ https://www.acmicpc.net/problem/7568
 
 N = int(input())
 data = []
-
 for _ in range(N):
     data.append(list(map(int, input().split())))
-ranks = []
+
 for i in range(N):
     rank = 1
     for j in range(N):
