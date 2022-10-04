@@ -13,7 +13,47 @@
 
 N, M = map(int, input().split())
 board = []
+cnts = []
 for _ in range(N):
     board.append(input())
 
-print(board)
+# 체스판 시작점 순회
+for i in range(N - 8 + 1):
+    for j in range(M - 8 + 1):
+        count_W, count_B = 0, 0
+
+        # 왼쪽 위가 흰색인 경우, 검은색인 경우에 대해 각각 count
+        for k in range(i, i + 8):
+            for l in range(j, j + 8):
+                if k % 2 == 0:
+                    if l % 2 == 0:
+                        if board[k][l] != 'W':
+                            count_W += 1
+                        else: 
+                            count_B += 1
+                    else:
+                        if board[k][l] != 'B':
+                            count_W += 1
+                        else: 
+                            count_B += 1
+                else:
+                    if l % 2 == 0:
+                        if board[k][l] != 'B':
+                            count_W += 1
+                        else: 
+                            count_B += 1
+                    else:
+                        if board[k][l] != 'W':
+                            count_W += 1
+                        else: 
+                            count_B += 1
+        cnts.append(count_W)
+        cnts.append(count_B)
+
+print(min(cnts))
+
+'''
+회고 / TIL
+- 효율적인 풀이가 마땅히 생각나지 않아서 문제 그대로 순회하면서 개수를 세도록 풀었음. 
+- 다른 사람 풀이 찾아보니 거의 이렇게 푼 거 같아서 안심했음. 역시 브루트 포스...
+'''
