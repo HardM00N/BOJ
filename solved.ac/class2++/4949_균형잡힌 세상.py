@@ -12,4 +12,47 @@
 - 짝을 이루는 두 괄호가 있을 때, 그 사이에 있는 문자열도 균형이 잡혀야 한다.
 
 정민이를 도와 문자열이 주어졌을 때 균형잡힌 문자열인지 아닌지를 판단해보자. 
+
+자세한 문제 설명은 https://www.acmicpc.net/problem/4949 참조
+'''
+
+while 1:
+    sentence = input()
+    if sentence == '.':                 # .이 입력되면 프로그램 종료
+        break
+
+    stack = []                          # 괄호를 저장하기 위한 스택 초기화
+
+    for s in sentence:
+        if s == '(' or s == '[':        # (나 [면 스택에 추가
+            stack.append(s)
+        elif s == ')':                  # )가 입력되었을 때
+            if len(stack) == 0:         # (가 스택에 없다면 불균형
+                stack.append(s)
+                break
+            else:
+                if stack[-1] == '(':    # 스택의 top이 (였다면
+                    stack.pop()         # 균형이므로 스택에서 pop 시행
+                else:
+                    break
+        elif s == ']':
+            if len(stack) == 0:
+                stack.append(s)
+                break
+            else:
+                if stack[-1] == '[':
+                    stack.pop()
+                else:
+                    break
+    
+    if stack == []:
+        print('yes')
+    else:
+        print('no')
+
+'''
+회고 / TIL
+- 처음엔 단순히 소괄호와 대괄호 별로 count해서 처리하려다가 ([)]의 경우를 처리하지 못한다는 것을 깨닫고 스택으로 해결함. 
+- 마지막에 스택에 저장된 괄호의 짝이 가장 먼저 나타나야 균형이고, stack이 모두 pop되어 비어야 문장이 균형임. 
+- 파이썬에선 스택을 단순히 리스트로 구현할 수 있기에 편리하다는 것을 체감함. 
 '''
