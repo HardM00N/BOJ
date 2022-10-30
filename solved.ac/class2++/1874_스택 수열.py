@@ -11,3 +11,18 @@
 
 이를 계산하는 프로그램을 작성하라. 
 '''
+
+import sys
+input = sys.stdin.readline
+
+stack, records, results = [], [], []
+
+for _ in range(int(input())):
+    num = int(input())
+    
+    if num in records:
+        while stack[-1] != num:
+            stack.pop()
+            print('-')
+    else:
+        pass
