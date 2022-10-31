@@ -52,3 +52,9 @@ if graph[1][K] == INF or graph[K][X] == INF:
     print(-1)
 else:
     print(graph[1][K] + graph[K][X])
+
+'''
+회고 / TIL
+- 앞서 배운 플로이드 워셜 알고리즘을 거의 그대로 활용함. 
+- 주의할 점은 간선 간의 비용이 모두 1이며, 양방향으로 연결된다는 점임. 
+'''
