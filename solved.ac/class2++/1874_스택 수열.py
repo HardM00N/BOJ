@@ -12,18 +12,38 @@
 이를 계산하는 프로그램을 작성하라. 
 '''
 
-import sys
-input = sys.stdin.readline
+stack, results = [], []
+check = 0
 
-stack, records, results = [], [], []
+now = 1
 
 for _ in range(int(input())):
     num = int(input())
+
+    # 스택 push
+    while now <= num:
+        stack.append(now)
+        results.append('+')
+        now += 1
     
-    if num in records:
-        while stack[-1] != num:
-            stack.pop()
-            print('-')
+    # 스택 pop
+    if stack[-1] == num:
+        stack.pop()
+        results.append('-')
+    
+    # 불가능할 경우
     else:
-        pass
-    
+        check = 1
+
+if check:
+    print('NO')
+else:
+    for result in results:
+        print(result)
+
+'''
+회고 / TIL
+- 너무 어렵게 생각해서 복잡하게 풀다가 꼬여서 결국 답지를 참고함. 
+- 로직이 생각보다 간단했음. 내 생각엔 불가능한 예외에 대해 여러 조건이 필요하다고 생각했지만 그렇지 않았음. 
+- 실버2부터 슬슬 쉽지 않은 느낌이 듦...
+'''
