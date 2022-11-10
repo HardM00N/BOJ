@@ -43,7 +43,7 @@ print(end)
 
 
 
-# 두 번째 풀이
+# 두 번째 풀이 -> 472ms
 import sys
 input = sys.stdin.readline
 from collections import Counter
@@ -71,7 +71,7 @@ print(end)
 
 
 
-# 추가 풀이 (첫 번째 풀이에 리스트 컴프리헨션 적용)
+# 추가 풀이 (첫 번째 풀이에 리스트 컴프리헨션 적용) -> 2888ms
 import sys
 input = sys.stdin.readline
 
