@@ -15,3 +15,13 @@
 상근이는 환경에 매우 관심이 많기 때문에, 나무를 필요한 만큼만 집으로 가져가려고 한다. 
 이 때, 적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 구하는 프로그램을 작성하시오.
 '''
+import sys
+input = sys.stdin.readline
+
+_, M = map(int, input().split())
+tree = list(map(int, input().split()))
+
+start, end = 1, max(tree)
+
+while start <= end:
+    
