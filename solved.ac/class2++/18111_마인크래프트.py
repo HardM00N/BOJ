@@ -62,3 +62,6 @@ for height in range(min(map(min, ground)), max(map(max, ground)) + 1):
 
 results.sort(key=lambda x: (x[0], -x[1]))
 print(results[0][0], results[0][1])
+
+
+# ㅁㄴㅇㄹ
