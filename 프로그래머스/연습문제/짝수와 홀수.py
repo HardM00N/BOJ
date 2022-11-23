@@ -4,11 +4,9 @@
 def solution(num):
     
     if num % 2 == 0:
-        answer = "Even"
+        return "Even"
     else:
-        answer = "Odd"
-    
-    return answer
+        return "Odd"
 
 # 다른 사람의 풀이
 def evenOrOdd(num):
