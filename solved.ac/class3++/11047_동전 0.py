@@ -22,7 +22,7 @@ print(cnt)
 
 # 다른 사람의 풀이 (시간은 동일)
 N, K = map(int,input().split())
-a = [int(input()) for _ in "A" * N]
+a = [int(input()) for _ in "A" * N]                     # range 안 쓰기 위해 문자열로 곱한 듯... 처음 보는 스킬
 s = 0
 for i in a[::-1]:s += K // i; K %= i
 print(s)
