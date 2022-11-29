@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/15489
+
 r, c, w = map(int, input().split())
 
 pas = [[1], [1, 1]]

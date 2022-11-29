@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/11726
+
 n = int(input())
 
 dp = [0] * 1001

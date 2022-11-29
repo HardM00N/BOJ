@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/14916
+
 n = int(input())
 
 coin = 0

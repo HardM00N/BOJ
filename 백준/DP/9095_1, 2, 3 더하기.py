@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/9095
+
 t = int(input())
 
 d = [0] * 12
