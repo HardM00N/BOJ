@@ -12,7 +12,7 @@ for i in range(n // 2, 0, -1):
         if i == 1:
             cnt += n
 
-# print(cnt)
+print(cnt)
 
 # 두 번째 풀이 (Python3 시간 초과... PyPy3 160ms)
 n = int(input())
