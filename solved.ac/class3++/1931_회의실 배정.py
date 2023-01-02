@@ -4,18 +4,23 @@ import sys
 input = sys.stdin.readline
 
 meets = []
-avail_meets = []
-
 N = int(input())
-visited = [0] * N
-print(visited)
+for _ in range(N):
+    meets.append(list(map(int, input().split())))
 
-# for _ in range(N):
-#     meets.append(list(map(int, input().split())))
+meets = sorted(meets, key=lambda x: (x[0], x[1]))
 
-# meets = sorted(meets, key=lambda x: (x[0], x[1]))
+def find_next(m, cnt):
+    for meet in meets:
+        if m[1] == meet[0]:
+            temp = meet
+            continue
+        if m[1] < meet[0]:
+            
 
-# for meet in meets:
+        
+
+
 
 '''
 [0, 6] [6, 10] [12, 14] -> 3
