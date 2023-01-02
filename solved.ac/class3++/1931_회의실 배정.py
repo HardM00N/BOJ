@@ -16,9 +16,6 @@ def find_next(m, cnt):
             temp = meet
             continue
         if m[1] < meet[0]:
-            
-
-        
 
 
 
