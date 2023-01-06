@@ -18,5 +18,6 @@ def solution(nums):
     return prime_cnt
 
 '''
-- 다들 고만고만한 풀이...
+회고 / TIL
+- 다들 고만고만한 풀이로 비슷함.
 '''
