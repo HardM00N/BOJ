@@ -9,5 +9,3 @@ def merge_sort(N, scores, K):
         return scores
     else:
         N //= 2
-
-        
