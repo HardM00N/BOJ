@@ -16,7 +16,6 @@ while start <= end:
 
     for i in bosuk:
         cnt += i // mid                             # 보석을 mid로 나눈 몫만큼 카운트 (7 // 6 = 1)
-        
         if i % mid:                                 # 나머지가 남았으면 (7 % 6 = 1)
             cnt += 1                                # 카운트
             
