@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/2792
 
-# 나의 풀이 (Python3 3260ms)
+# 나의 풀이 (Python3 2188ms)
 import sys
 input = sys.stdin.readline
 
@@ -8,7 +8,7 @@ N, M = map(int, input().split())
 bosuk = [int(input()) for _ in range(M)]
 
 start = 1
-end = sum(bosuk)
+end = max(bosuk)
 
 while start <= end:
     mid = (start + end) // 2
