@@ -13,7 +13,6 @@ end = max(bosuk)
 while start <= end:
     mid = (start + end) // 2
     cnt = 0
-    temp = []
 
     for i in bosuk:
         cnt += i // mid                             # 보석을 mid로 나눈 몫만큼 카운트 (7 // 6 = 1)
