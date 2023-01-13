@@ -10,7 +10,7 @@ if T % C:
 
 else:
     for i in (A, B, C):
-        print(T // i, end=' ')
+        print(T // i, end=' ')                          # 가장 큰 버튼부터 차례대로 나눠주기
         T %= i
 
 '''
