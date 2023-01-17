@@ -23,7 +23,7 @@ def solution(new_id):
     
     return new_id
 
-# 다른 사람의 풀이2
+# 다른 사람의 풀이
 import re
 
 def solution(new_id):
