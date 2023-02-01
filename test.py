@@ -1,40 +1,39 @@
-def solution(s):
-    res = []
-    
-    while s:
-        if len(s) < 2:
-            res.append(s)
-            break
+def solution(survey, choices):
 
-        temp_x = s[0]
-        temp_y = s[1]
+    result = {'R': 0, 'T': 0, 'C': 0, 'F': 0, 'J': 0, 'M': 0, 'A': 0, 'N': 0}
 
-        if temp_x != temp_y:
-            res.append(s[:2])
-            s = s[2:]
+    for question, score in zip(survey, choices):
+        if score == 4:
             continue
-        
+
+        if score < 4:
+            result[question[0]] += 4 - score
         else:
-            cnt_x, cnt_others = 2, 0
+            result[question[1]] += score % 4
 
-            for i in s[2:]:
-                if i == temp_x:
-                    cnt_x += 1
-                else:
-                    cnt_others += 1
+    answer = ''
 
-                if cnt_x == cnt_others:
-                    res.append(s[:cnt_x + cnt_others])
-                    s = s[cnt_x + cnt_others:]
-                    break
-            else:
-                res.append(s)
-                s = ''
-        
-    return len(res)
+    if result['R'] >= result['T']:
+        answer += 'R'
+    else:
+        answer += 'T'
+    if result['C'] >= result['F']:
+        answer += 'C'
+    else:
+        answer += 'F'
+    if result['J'] >= result['M']:
+        answer += 'J'
+    else:
+        answer += 'M'
+    if result['A'] >= result['N']:
+        answer += 'A'
+    else:
+        answer += 'N'
+
+    return answer
 
 while 1:
     try:
-        print(solution(input()))
+        print(solution(input().split()))
     except:
         break
