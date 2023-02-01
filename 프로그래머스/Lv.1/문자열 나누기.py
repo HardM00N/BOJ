@@ -9,10 +9,10 @@ def solution(s):
             res.append(s)
             break
 
-        temp_x = s[0]                                           # 첫 번째 글자
-        temp_y = s[1]                                           # 두 번째 글자
+        x = s[0]                                                # 첫 번째 글자
+        y = s[1]                                                # 두 번째 글자
 
-        if temp_x != temp_y:                                    # 다르다면
+        if x != y:                                              # 다르다면
             res.append(s[:2])                                   # 분리 후 res에 보관
             s = s[2:]                                           # 남은 글자들로 다시 진행
             continue
@@ -21,7 +21,7 @@ def solution(s):
             cnt_x, cnt_others = 2, 0                            # 같다면
 
             for i in s[2:]:                                     # 세 번째 글자부터 확인
-                if i == temp_x:
+                if i == x:
                     cnt_x += 1
                 else:
                     cnt_others += 1

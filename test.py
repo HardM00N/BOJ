@@ -1,39 +1,22 @@
-def solution(survey, choices):
+def solution(ingredient):
+    cnt = 0
+    stack = ingredient[:3]
 
-    result = {'R': 0, 'T': 0, 'C': 0, 'F': 0, 'J': 0, 'M': 0, 'A': 0, 'N': 0}
+    for i in ingredient[3:]:
+        stack.append(i)
 
-    for question, score in zip(survey, choices):
-        if score == 4:
-            continue
+        if stack[-4:] == [1, 2, 3, 1]:
+            # stack = stack[:-4]
+            stack.pop()
+            stack.pop()
+            stack.pop()
+            stack.pop()
+            cnt += 1
 
-        if score < 4:
-            result[question[0]] += 4 - score
-        else:
-            result[question[1]] += score % 4
+    return cnt
 
-    answer = ''
-
-    if result['R'] >= result['T']:
-        answer += 'R'
-    else:
-        answer += 'T'
-    if result['C'] >= result['F']:
-        answer += 'C'
-    else:
-        answer += 'F'
-    if result['J'] >= result['M']:
-        answer += 'J'
-    else:
-        answer += 'M'
-    if result['A'] >= result['N']:
-        answer += 'A'
-    else:
-        answer += 'N'
-
-    return answer
-
-while 1:
-    try:
-        print(solution(input().split()))
-    except:
-        break
+# while 1:
+#     try:
+#         print(solution(input().split()))
+#     except:
+#         break
