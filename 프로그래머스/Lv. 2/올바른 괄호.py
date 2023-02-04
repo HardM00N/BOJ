@@ -21,8 +21,6 @@ def solution(s):
         return False
 
 # 두 번째 풀이 (기준 변수 활용)
-
-
 def solution(s):
     center = 0                                  # 기준이 되는 변수 선언
 
@@ -38,8 +36,6 @@ def solution(s):
     return center == 0                          # 반복문의 결과가 0이라면 올바른 괄호
 
 # 세 번째 풀이 (스택 활용)
-
-
 def solution(s):
     stack = []                                  # 스택 선언
 
@@ -47,8 +43,7 @@ def solution(s):
         if i == '(':                            # 열린 괄호 append
             stack.append(i)
         else:
-            # 닫힌 괄호는 스택이 비어있지 않고, top이 열린 괄호일 경우에만
-            if stack and stack[-1] == '(':
+            if stack and stack[-1] == '(':      # 닫힌 괄호는 스택이 비어있지 않고, top이 열린 괄호일 경우에만
                 stack.pop()                     # top의 열린 괄호 제거
             else:
                 return False
@@ -56,9 +51,7 @@ def solution(s):
     if not stack:                               # 반복문이 끝났을 때, stack이 완전히 비어야 올바른 괄호
         return True
 
-    # stack이 비지 않았다면 (ex. '((((') 불완전한 괄호
-    return False
-
+    return False                                # stack이 비지 않았다면 (ex. '((((') 불완전한 괄호
 
 '''
 회고 / TIL
