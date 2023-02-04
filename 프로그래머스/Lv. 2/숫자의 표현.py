@@ -20,3 +20,5 @@ def solution(n):
                 break
 
     return cnt
+
+# 두 번째 풀이
