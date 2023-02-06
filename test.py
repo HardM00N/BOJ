@@ -1,22 +1,20 @@
-def solution(N, K):
-    cnt = 0
+def GCD(a, b):
+    if a < b:
+        a, b = b, a
+    
+    while b:
+        a, b = b, a % b
 
-    nums = [1] * (N + 1)
-    nums[0], nums[1] = 0, 0    
-
-    for i in range(2, N + 1):
-        if nums[i]:
-            for j in range(i, N + 1, i):
-                if nums[j]:
-                    nums[j] = 0
-                    cnt += 1
-
-                if cnt == K:
-                    return j
+    return a
 
 while 1:
     try:
-        N, K = map(int, input().split())
-        print(solution(N, K))
+        N = int(input())
+        rings = list(map(int, input().split()))
+        
+        for i in range(1, N):
+            gcd = GCD(rings[0], rings[i])
+            print('{}/{}'.format(rings[0] // gcd, rings[i] // gcd))
+
     except:
         break
