@@ -26,6 +26,6 @@ for _ in range(int(input())):
 
 '''
 회고 / TIL
-- 유클리드 호제법 + combination 풀이
+- 유클리드 호제법 + combination
 - 다른 사람의 풀이도 비슷함.
 '''
