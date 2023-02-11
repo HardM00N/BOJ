@@ -6,13 +6,8 @@ import sys
 input = sys.stdin.readline
 
 def GCD(a, b):                                  # 유클리드 호제법
-
-    if a < b:
-        a, b = b, a
-
     while b:
         a, b = b, a % b
-    
     return a
 
 for _ in range(int(input())):
