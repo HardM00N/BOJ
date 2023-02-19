@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/9613
 
-# 나의 풀이 (Python4 44ms)
+# 나의 풀이 (Python3 44ms)
 from itertools import combinations
 import sys
 input = sys.stdin.readline
