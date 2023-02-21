@@ -23,12 +23,6 @@ def productMatrix(A, B):
     return [[sum(a*b for a, b in zip(A_row,B_col)) for B_col in zip(*B)] for A_row in A]
 # zip(*B) : [(1, 3, 5), (2, 4, 6)] -> [[1,2], [3,4], [5,6]]
 
-# 다른 사람으 ㅣ풀이
-import numpy as np
-
-def productMatrix(A, B):
-    return (np.matrix(A)*np.matrix(B)).tolist()     # 이렇게 풀까 고민했는데... ㅋㅋ
-
 '''
 회고 / TIL
 - 단순 행렬 곱이지만, 구현해보긴 처음임. 생각보다 헷갈려서 애먹었음.
