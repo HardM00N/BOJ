@@ -4,14 +4,14 @@
 def solution(arr1, arr2):
     res = []
 
-    for row in arr1:                                # arr1의 한 행씩 가져오기
+    for i in range(len(arr1)):                      # arr1의 한 행씩 가져오기
         temp = []
         
         for j in range(len(arr2[0])):               # arr2의 한 열씩 가져오기
             total = 0
 
-            for i, num in enumerate(row):           # 앞서 가져온 arr1의 한 행의 요소들 * arr2의 한 열의 요소들
-                total += num * arr2[i][j]
+            for k in range(len(arr1[0])):           # 앞서 가져온 arr1의 한 행의 요소들 * arr2의 한 열의 요소들
+                total += arr1[i][k] * arr2[k][j]
             
             temp.append(total)                      # 결과 행렬의 한 행 완성하기
         res.append(temp)                            # 완성된 행들을 append
@@ -31,7 +31,7 @@ def productMatrix(A, B):
 
 '''
 회고 / TIL
-- 단순 행렬 곱이지만, 구현해보긴 처음임.
+- 단순 행렬 곱이지만, 구현해보긴 처음임. 생각보다 헷갈려서 애먹었음.
 - zip과 *를 이용한 다른 사람의 풀이가 정말 대단함.
 - numpy는 웃고 가자.
 '''
