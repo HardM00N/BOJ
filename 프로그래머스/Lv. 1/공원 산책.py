@@ -34,7 +34,7 @@ def solution(park, routes):
                     break
                 ny += 1
         
-        else:                                                           # 끝까지 break문이 걸리지 않았다면, 즉 이동 가능하다면 새 위치로 이동 (for - else)
+        else:                                                           # 끝까지 break문이 걸리지 않았다면, 즉 수행 가능한 명령이었다면 비로소 새 위치로 이동 (for - else)
             x, y = nx, ny
 
     return [x, y]
