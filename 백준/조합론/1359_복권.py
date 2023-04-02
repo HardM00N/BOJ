@@ -8,7 +8,7 @@ all = cnt = 0
 
 for i in combinations(range(N), M):
     for j in combinations(range(N), M):
-        if len(set(i) & set(j)) >= K:
+        if len(set(i) & set(j)) >= K:           # K개 이상 일치하는지 체크
             cnt += 1
         all += 1
 
