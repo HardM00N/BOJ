@@ -14,7 +14,7 @@ else:
         numerator *= (N - i)                    # 분자에 곱해 나가기 ex) 100 * 99 * 98 * ...
         denominator *= (R - i)                  # 분모에 곱해 나가기 ex) 2 * 1
 
-    print(numerator // denominator)             # 조합 리턴
+    print(numerator // denominator)             # 조합 결과 출력
 
 # 다른 사람의 풀이 (Python3 40ms)
 n = int(input())
