@@ -19,7 +19,6 @@ def dfs(land, row, col, score):
                 continue
             dfs(land, row + 1, i, score)                                            # DFS
 
-
 def solution(land):
     for i in range(4):
         dfs(land, 0, i, 0)
@@ -35,7 +34,6 @@ def solution(land):
         land[i][3] += max(land[i - 1][0], land[i - 1][1], land[i - 1][2])
     
     return max(land[-1])
-
 
 '''
 회고 / TIL
