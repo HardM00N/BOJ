@@ -4,3 +4,5 @@
 def solution(dirs):
     answer = 0
     return answer
+
+# 다른 사람의 풀이
